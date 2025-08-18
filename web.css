@@ -8,13 +8,13 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
+  color: #f0f0f0; /* lighter text for dark background */
+  background-color: #0a1a3f; /* dark blue background */
 }
 
 /* Navbar */
 header {
-  background: #222;
+  background: #091530; /* slightly darker shade for navbar */
   color: #fff;
   padding: 1rem 2rem;
   position: sticky;
@@ -30,6 +30,7 @@ nav {
 
 .logo {
   font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .nav-links {
@@ -58,7 +59,7 @@ section {
 section h2 {
   margin-bottom: 1rem;
   font-size: 2rem;
-  color: #222;
+  color: #ffffff;
 }
 
 section p {
@@ -73,10 +74,10 @@ section p {
 }
 
 .work-card {
-  background: #fff;
+  background: #132b5f; /* lighter dark blue card background */
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s;
 }
 
@@ -107,7 +108,7 @@ section p {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #222;
+  background: #091530;
   color: #fff;
   margin-top: 2rem;
 }
