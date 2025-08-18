@@ -5,21 +5,28 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* enables smooth scrolling */
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  color: #f0f0f0; /* lighter text for dark background */
+  color: #f0f0f0;
   background-color: #0a1a3f; /* dark blue background */
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* Navbar */
 header {
-  background: #091530; /* slightly darker shade for navbar */
+  background: rgba(9, 21, 48, 0.9); /* semi-transparent navbar */
   color: #fff;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(6px); /* blur effect for glass look */
 }
 
 nav {
@@ -53,7 +60,11 @@ nav {
 section {
   padding: 4rem 2rem;
   max-width: 900px;
-  margin: auto;
+  margin: 2rem auto;
+  background: rgba(19, 43, 95, 0.6); /* translucent background */
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 section h2 {
@@ -74,15 +85,17 @@ section p {
 }
 
 .work-card {
-  background: #132b5f; /* lighter dark blue card background */
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent card */
   padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  transition: transform 0.2s;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s, background 0.3s;
 }
 
 .work-card:hover {
   transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15); /* slightly brighter on hover */
 }
 
 /* Contact Info */
@@ -108,7 +121,8 @@ section p {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #091530;
+  background: rgba(9, 21, 48, 0.9);
   color: #fff;
   margin-top: 2rem;
+  backdrop-filter: blur(6px);
 }
