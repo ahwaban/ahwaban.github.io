@@ -63,5 +63,27 @@
   <footer>
     <p>© 2025 Ahwaban Mukherjee. All rights reserved.</p>
   </footer>
+
+  <!-- Scroll-to-Top Button -->
+  <button id="scrollTopBtn">↑</button>
+
+  <script>
+    // Get the button
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+    // Show the button after scrolling 300px
+    window.onscroll = function() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollTopBtn.style.display = "block";
+      } else {
+        scrollTopBtn.style.display = "none";
+      }
+    };
+
+    // Scroll to top smoothly
+    scrollTopBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
 </body>
 </html>
