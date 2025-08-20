@@ -170,3 +170,55 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar turns into vertical stack */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .logo {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Sections less padding */
+  section {
+    padding: 2rem 1rem;
+    margin: 1rem;
+  }
+
+  /* Work grid becomes single-column */
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Scroll-to-top button smaller */
+  #scrollTopBtn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+}
