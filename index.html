@@ -11,10 +11,6 @@
   <header>
   <nav>
     <h1 class="logo">My Portfolio</h1>
-    <!-- Hamburger Button -->
-    <div class="hamburger" id="hamburger">
-      ☰
-    </div>
     <ul class="nav-links" id="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
@@ -135,17 +131,6 @@
       appearOnScroll.observe(fader);
     });
   </script>
-
-  <script>
-  // Mobile hamburger toggle
-  const hamburger = document.getElementById("hamburger");
-  const navLinksMenu = document.getElementById("nav-links");
-
-  hamburger.addEventListener("click", () => {
-    navLinksMenu.classList.toggle("open");
-    hamburger.classList.toggle("active");
-  });
-</script>
 
 </body>
 </html>
