@@ -284,3 +284,19 @@ footer {
   transform: translateY(-3px);
 }
 
+/* Button Group */
+.btn-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+}
+
+/* Make buttons stack on small screens */
+@media (max-width: 600px) {
+  .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
