@@ -6,7 +6,7 @@
 }
 
 html {
-  scroll-behavior: smooth; /* enables smooth scrolling */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,16 +20,16 @@ body {
 
 /* Navbar */
 header {
-  background: rgba(9, 21, 48, 0.9); /* semi-transparent navbar */
+  background: rgba(9, 21, 48, 0.9);
   color: #fff;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(6px); /* blur effect for glass look */
+  backdrop-filter: blur(6px);
 }
 
-nav {
+nav.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -40,10 +40,12 @@ nav {
   font-weight: bold;
 }
 
+/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links a {
@@ -56,12 +58,22 @@ nav {
   color: #00bcd4;
 }
 
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 /* Sections */
 section {
   padding: 4rem 2rem;
   max-width: 900px;
   margin: 2rem auto;
-  background: rgba(19, 43, 95, 0.6); /* translucent background */
+  background: rgba(19, 43, 95, 0.6);
   border-radius: 15px;
   backdrop-filter: blur(8px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -85,7 +97,7 @@ section p {
 }
 
 .work-card {
-  background: rgba(255, 255, 255, 0.1); /* semi-transparent card */
+  background: rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
   border-radius: 12px;
   backdrop-filter: blur(6px);
@@ -95,7 +107,7 @@ section p {
 
 .work-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.15); /* slightly brighter on hover */
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Contact Info */
@@ -129,7 +141,7 @@ footer {
 
 /* Scroll-to-Top Button */
 #scrollTopBtn {
-  display: none; /* hidden by default */
+  display: none;
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -171,36 +183,45 @@ footer {
   transform: translateY(0);
 }
 
-/* Mobile Responsive Styles */
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  /* Navbar turns into vertical stack */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
+  .menu-toggle {
+    display: block;
   }
 
   .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(9, 21, 48, 0.95);
     flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1rem;
+    align-items: flex-start;
+    width: 200px;
+    padding: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    border-radius: 0 0 10px 10px;
   }
 
-  .logo {
-    margin-bottom: 0.5rem;
+  .nav-links.open {
+    max-height: 500px; /* allow expansion */
+    opacity: 1;
   }
 
-  /* Sections less padding */
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+
   section {
     padding: 2rem 1rem;
     margin: 1rem;
   }
 
-  /* Work grid becomes single-column */
   .work-grid {
     grid-template-columns: 1fr;
   }
 
-  /* Scroll-to-top button smaller */
   #scrollTopBtn {
     bottom: 20px;
     right: 20px;
