@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahwaban Mukherjee</title>
-  <link rel="stylesheet" href="web.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dr. Aratrika Chatterjee - Portfolio</title>
+  <link rel="stylesheet" href="web.css"/>
 </head>
 <body>
   <!-- Navigation Bar -->
   <header>
-    <nav class="navbar">
-      <h1 class="logo">Ahwaban Mukherjee</h1>
-      <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav>
+      <div class="logo">Aratrika Chatterjee</div>
+      <button class="hamburger" id="hamburger">☰</button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="AhwabanMukherjee_CV.pdf" target="_blank">CV</a></li>
+        <li><a href="cv.pdf" target="_blank">CV</a></li>
       </ul>
     </nav>
   </header>
@@ -25,111 +25,70 @@
   <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p>
-      Hi! I'm Ahwaban Mukherjee, a passionate electronics engineering student and enthusiast who enjoys building
-      creative, efficient and low-level solutions. This is my page where you can learn more about my work, interests, and get in touch with me.
-    </p>
-    <p>
-      I'm a 4th year undergrad at the Indian Institute of Technology, Kharagpur at the department of Electronics and Electrical Communication 
-      Engineering, in a 5-year integrated dual degree course. I'm specializing in Microelectronics and VLSI circuits, from the batch of 2022, 
-      and graduating in 2027. I'm also an incoming digital intern at TI for the summer of 2026.
-    </p>
-    <p>
-      Just hit me up if you want to talk to me about anything at all, related to electronics, physics, extremely un-rigourous mathematics or even 
-      history, philosophy, poetry, MMA or literature. On a serious note, do reach out to me if you want to know specifics about my recommendations for
-      materials on various subjects in electronics, or about the JEE.
+      Welcome to my portfolio! I am Dr. Aratrika Chatterjee, passionate about research, innovation, and impactful work.
     </p>
   </section>
 
   <!-- Work Section -->
   <section id="work" class="fade-in">
-    <h2>Some of My Recent Work</h2>
+    <h2>My Work</h2>
     <div class="work-grid">
-      <div class="work-card">
-        <h3>CDR</h3>
-        <p>A quarter-rate Clock and Data Recovery system at 10GHz, work ongoing.</p>
-      </div>
-      <div class="work-card">
-        <h3>PLL</h3>
-        <p>A basic type-II Phase Locked Loop using a charge pump, a CSR VCO, a 128 factor divider using TSPC flip-flops and a RC||R loop filter.</p>
-      </div>
-      <div class="work-card">
-        <h3>MIPS32</h3>
-        <p>A rudimentary MIPS32 processor with a 4KB unified word-addressable memory and hazard detection and forwarding capabilities.</p>
-      </div>
+      <div class="work-card">Project 1</div>
+      <div class="work-card">Project 2</div>
+      <div class="work-card">Project 3</div>
+      <div class="work-card">Project 4</div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="fade-in">
     <h2>Contact Me</h2>
-    <p>Feel free to reach out to me at:</p>
     <ul class="contact-info">
-      <li>Email: <a href="mailto:ahwaban@gmail.com">ahwaban@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://in.linkedin.com/in/ahwaban-mukherjee-11a5b6112" target="_blank">linkedin.com/in/ahwaban-mukherjee</a></li>
-      <li>GitHub: <a href="https://github.com/ahwaban" target="_blank">github.com/ahwaban</a></li>
+      <li>Email: <a href="mailto:aratrika@example.com">aratrika@example.com</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/aratrika" target="_blank">linkedin.com/in/aratrika</a></li>
+      <li>Twitter: <a href="https://twitter.com/aratrika" target="_blank">@aratrika</a></li>
     </ul>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Ahwaban Mukherjee. All rights reserved. Last updated 21st of August, 2025</p>
+    <p>&copy; 2025 Dr. Aratrika Chatterjee. All Rights Reserved.</p>
   </footer>
 
   <!-- Scroll-to-Top Button -->
-  <button id="scrollTopBtn">↑</button>
+  <button id="scrollTopBtn" title="Go to top">↑</button>
 
+  <!-- Script -->
   <script>
-    // Scroll-to-Top Button
+    // Hamburger menu toggle
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    // Scroll-to-top button
     const scrollTopBtn = document.getElementById("scrollTopBtn");
-    window.onscroll = function() {
-      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        scrollTopBtn.style.display = "block";
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollTopBtn.classList.add("show");
       } else {
-        scrollTopBtn.style.display = "none";
+        scrollTopBtn.classList.remove("show");
       }
-    };
-    scrollTopBtn.onclick = function() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
 
-    // Active nav link on scroll
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links a");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (scrollY >= sectionTop) {
-          current = section.getAttribute("id");
+      // Fade-in effect for sections
+      document.querySelectorAll(".fade-in").forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add("show");
         }
       });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    });
+    };
 
-    // Fade-in on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("show");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const navMenu = document.getElementById("nav-links");
-    menuToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
 </body>
