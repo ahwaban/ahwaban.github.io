@@ -254,10 +254,12 @@ footer {
   text-decoration: none;
   font-weight: bold;
   border-radius: 8px;
-  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.7);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .btn-cv:hover {
   background: #0097a7;
   transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(0, 188, 212, 1);
 }
