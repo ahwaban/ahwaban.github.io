@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+  font-family: "Fira Code", "Noto Sans Mono", ui-monospace, SFMono-Regular,
+               Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   line-height: 1.6;
   color: #f0f0f0;
   background-color: #0a1a3f; /* dark blue background */
