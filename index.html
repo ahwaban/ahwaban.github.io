@@ -9,34 +9,34 @@
 <body>
   <!-- Navigation Bar -->
   <header>
-  <nav>
-    <h1 class="logo">Ahwaban Mukherjee</h1>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#contact">Contact Me</a></li>
-    </ul>
-  </nav>
-</header>
-
+    <nav class="navbar">
+      <h1 class="logo">Ahwaban Mukherjee</h1>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="AhwabanMukherjee_CV.pdf" target="_blank">CV</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- About Section -->
   <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p>
       Hi! I'm Ahwaban Mukherjee, a passionate electronics engineering student and enthusiast who enjoys building
-      creative, efficient and low-level solutions. This is my page where you can learn more about my work, interests, and get in touch with me
+      creative, efficient and low-level solutions. This is my page where you can learn more about my work, interests, and get in touch with me.
     </p>
     <p>
       I'm a 4th year undergrad at the Indian Institute of Technology, Kharagpur at the department of Electronics and Electrical Communication 
       Engineering, in a 5-year integrated dual degree course. I'm specializing in Microelectronics and VLSI circuits, from the batch of 2022, 
-      and graduating in 2027. I'm also an incoming digital intern at TI for the summer of 2026
+      and graduating in 2027. I'm also an incoming digital intern at TI for the summer of 2026.
     </p>
-  
     <p>
-      Just hit me up if you want to talk to me about anything at all, related to electronics, physics, extremely un-rigourous mathmatics or even 
+      Just hit me up if you want to talk to me about anything at all, related to electronics, physics, extremely un-rigourous mathematics or even 
       history, philosophy, poetry, MMA or literature. On a serious note, do reach out to me if you want to know specifics about my recommendations for
-      materials on various subjects in electronics, or about the JEE
+      materials on various subjects in electronics, or about the JEE.
     </p>
   </section>
 
@@ -46,15 +46,15 @@
     <div class="work-grid">
       <div class="work-card">
         <h3>CDR</h3>
-        <p>A quarter-rate Clock and Data Recovery system at 10GHz, work ongoing</p>
+        <p>A quarter-rate Clock and Data Recovery system at 10GHz, work ongoing.</p>
       </div>
       <div class="work-card">
         <h3>PLL</h3>
-        <p>A basic type-II Phase Locked Loop using a charge pump, a CSR VCO, a 128 factor divider using TSPC flip-flops and a RC||R loop filter</p>
+        <p>A basic type-II Phase Locked Loop using a charge pump, a CSR VCO, a 128 factor divider using TSPC flip-flops and a RC||R loop filter.</p>
       </div>
       <div class="work-card">
         <h3>MIPS32</h3>
-        <p>A rudimentary MIPS32 processor with a 4KB unified word-addressable memory and hazard detection and forwarding capabilities</p>
+        <p>A rudimentary MIPS32 processor with a 4KB unified word-addressable memory and hazard detection and forwarding capabilities.</p>
       </div>
     </div>
   </section>
@@ -64,9 +64,9 @@
     <h2>Contact Me</h2>
     <p>Feel free to reach out to me at:</p>
     <ul class="contact-info">
-      <li>Email: <a href="mailto:your.email@example.com">ahwaban@gmail.com</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">https://in.linkedin.com/in/ahwaban-mukherjee-11a5b6112</a></li>
-      <li>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/ahwaban</a></li>
+      <li>Email: <a href="mailto:ahwaban@gmail.com">ahwaban@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://in.linkedin.com/in/ahwaban-mukherjee-11a5b6112" target="_blank">linkedin.com/in/ahwaban-mukherjee</a></li>
+      <li>GitHub: <a href="https://github.com/ahwaban" target="_blank">github.com/ahwaban</a></li>
     </ul>
   </section>
 
@@ -79,10 +79,8 @@
   <button id="scrollTopBtn">↑</button>
 
   <script>
-    // Get the button
+    // Scroll-to-Top Button
     const scrollTopBtn = document.getElementById("scrollTopBtn");
-
-    // Show the button after scrolling 300px
     window.onscroll = function() {
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         scrollTopBtn.style.display = "block";
@@ -90,18 +88,13 @@
         scrollTopBtn.style.display = "none";
       }
     };
-
-    // Scroll to top smoothly
     scrollTopBtn.onclick = function() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-  </script>
 
-    <script>
-    // Highlight active nav link on scroll
+    // Active nav link on scroll
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links a");
-
     window.addEventListener("scroll", () => {
       let current = "";
       sections.forEach(section => {
@@ -110,7 +103,6 @@
           current = section.getAttribute("id");
         }
       });
-
       navLinks.forEach(link => {
         link.classList.remove("active");
         if (link.getAttribute("href") === "#" + current) {
@@ -118,17 +110,10 @@
         }
       });
     });
-  </script>
 
-    <script>
     // Fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -136,11 +121,16 @@
         observer.unobserve(entry.target);
       });
     }, appearOptions);
-
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
-  </script>
 
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-links");
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+  </script>
 </body>
 </html>
