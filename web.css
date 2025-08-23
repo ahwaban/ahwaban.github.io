@@ -244,8 +244,8 @@ footer {
   }
 }
 
-/* CV Button */
-.btn-cv {
+/* Primary Button (CV, Important actions) */
+.btn-primary {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
@@ -258,8 +258,29 @@ footer {
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
-.btn-cv:hover {
+.btn-primary:hover {
   background: #0097a7;
   transform: translateY(-3px);
   box-shadow: 0 0 18px rgba(0, 188, 212, 1);
 }
+
+/* Secondary Button (Contact Me, Less emphasis) */
+.btn-secondary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #00bcd4;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
